@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>API Viewer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="/favicon.svg">
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- Load the Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+
+  <!-- Initialize the Scalar API Reference -->
+  <script>
+    Scalar.createApiReference("#app", {
+      hideClientButton: true,
+      // The URL of the OpenAPI/Swagger document
+      url: "{{.Url}}",
+      // Avoid CORS issues
+      proxyUrl: "{{.Proxy}}",
+      // Theme
+      theme: "{{.Theme}}",
+    })
+  </script>
+</body>
+
+</html>
